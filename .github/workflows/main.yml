@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build project
-      run: xcodebuild -project CicdDemo.xcodeproj -scheme YourScheme -destination "platform=iOS Simulator,name=iPhone 12" build
+      run: xcodebuild -project CicdDemo.xcodeproj -scheme CicdDemo -destination "platform=iOS Simulator,name=iPhone 15" build
 
     - name: Run tests
-      run: xcodebuild -project CicdDemo.xcodeproj -scheme YourScheme -destination "platform=iOS Simulator,name=iPhone 12" test
+      run: xcodebuild -project CicdDemo.xcodeproj -scheme CicdDemo -destination "platform=iOS Simulator,name=iPhone 15" test
