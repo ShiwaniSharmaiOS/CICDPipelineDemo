@@ -1,0 +1,20 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build project
+      run: xcodebuild -project CicdDemo.xcodeproj -scheme YourScheme -destination "platform=iOS Simulator,name=iPhone 12" build
+
+    - name: Run tests
+      run: xcodebuild -project CicdDemo.xcodeproj -scheme YourScheme -destination "platform=iOS Simulator,name=iPhone 12" test
